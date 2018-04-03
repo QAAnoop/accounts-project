@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boot.model.Shipwreck;
+import com.boot.model.Account;
 import com.boot.repository.ShipwreckRepository;
 
 @RestController
@@ -21,35 +21,35 @@ public class ShipwreckController
 	private ShipwreckRepository shipRepo;
 	
 	@RequestMapping(value = "shipwrecks", method = RequestMethod.GET)
-	public List<Shipwreck> list()
+	public List<Account> list()
 	{
 		return shipRepo.findAll();
 	}
 	
 	@RequestMapping(value = "shipwrecks", method = RequestMethod.POST)
-	public Shipwreck create(@RequestBody Shipwreck shipwreck)
+	public Account create(@RequestBody Account shipwreck)
 	{
 		return shipRepo.saveAndFlush(shipwreck);
 	}
 	
 	@RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.GET)
-	public Shipwreck get(@PathVariable Long id)
+	public Account get(@PathVariable Long id)
 	{
 		return shipRepo.findOne(id);
 	}
 	
 	@RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.PUT)
-	public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck shipwreck)
+	public Account update(@PathVariable Long id, @RequestBody Account shipwreck)
 	{
-		Shipwreck existingWreck = shipRepo.findOne(id);
+		Account existingWreck = shipRepo.findOne(id);
 		BeanUtils.copyProperties(shipwreck, existingWreck);
 		return shipRepo.saveAndFlush(existingWreck);
 	}
 	
 	@RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.DELETE)
-	public Shipwreck delete(@PathVariable Long id)
+	public Account delete(@PathVariable Long id)
 	{
-		Shipwreck existingWreck = shipRepo.findOne(id);
+		Account existingWreck = shipRepo.findOne(id);
 		shipRepo.delete(existingWreck);		
 		return existingWreck;
 	}

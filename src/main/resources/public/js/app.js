@@ -45,21 +45,21 @@
 					pageTitle: 'Home'
 				}
 			})
-			.state('shipwrecks',{
-	        url:'/shipwrecks',
-	        templateUrl: viewsPrefix + 'shipwrecks.html',
+			.state('accounts',{
+	        url:'/accounts',
+	        templateUrl: viewsPrefix + 'accounts.html',
 	        controller:'ShipwreckListController'
-	    }).state('viewShipwreck',{
-	       url:'/shipwrecks/:id/view',
-	       templateUrl: viewsPrefix + 'shipwreck-view.html',
+	    }).state('viewAccount',{
+	       url:'/accounts/:id/view',
+	       templateUrl: viewsPrefix + 'account-view.html',
 	       controller:'ShipwreckViewController'
-	    }).state('newShipwreck',{
-	        url:'/shipwrecks/new',
-	        templateUrl: viewsPrefix + 'shipwreck-add.html',
+	    }).state('newAccount',{
+	        url:'/accounts/new',
+	        templateUrl: viewsPrefix + 'account-add.html',
 	        controller:'ShipwreckCreateController'
-	    }).state('editShipwreck',{
-	        url:'/shipwrecks/:id/edit',
-	        templateUrl: viewsPrefix + 'shipwreck-edit.html',
+	    }).state('editAccount',{
+	        url:'/accounts/:id/edit',
+	        templateUrl: viewsPrefix + 'account-edit.html',
 	        controller:'ShipwreckEditController'
 	    })
 	})

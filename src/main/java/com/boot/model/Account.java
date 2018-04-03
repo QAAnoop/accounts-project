@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Shipwreck {
+public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
@@ -14,9 +14,9 @@ public class Shipwreck {
 	String lastName;
 	Long accountId;
 
-	public Shipwreck() { }
+	public Account() { }
 
-	public Shipwreck(Long id, String firstName, String lastName, Long accountId, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
+	public Account(Long id, String firstName, String lastName, Long accountId, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
